@@ -12,12 +12,13 @@ namespace SpecFlow.Autofac
     using BoDi;
 
     using TechTalk.SpecFlow;
+    using TechTalk.SpecFlow.UnitTestProvider;
 
     public class AutofacPlugin : IRuntimePlugin
     {
         private static Object _registrationLock = new Object();
 
-        public void Initialize(RuntimePluginEvents runtimePluginEvents, RuntimePluginParameters runtimePluginParameters)
+        public void Initialize(RuntimePluginEvents runtimePluginEvents, RuntimePluginParameters runtimePluginParameters, UnitTestProviderConfiguration unitTestProviderConfiguration)
         {
             runtimePluginEvents.CustomizeGlobalDependencies += (sender, args) =>
             {
